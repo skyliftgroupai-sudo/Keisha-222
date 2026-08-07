@@ -3,11 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // Hide the dev-only on-screen indicators (never present in production builds).
-  devIndicators: {
-    appIsrStatus: false,
-    buildActivity: false,
-  },
+  // Hide the dev-only on-screen indicator (never present in production builds).
+  devIndicators: false,
   images: {
     // Add your image CDN host(s) here (Cloudinary / S3+CloudFront).
     remotePatterns: [
