@@ -50,7 +50,7 @@ export function Header() {
       )}
     >
       <div className="container-lux">
-        <div className="flex h-20 items-center justify-between gap-6">
+        <div className="flex h-20 items-center justify-between gap-6 lg:h-24">
           {/* Left: mobile toggle + desktop nav */}
           <div className="flex flex-1 items-center gap-8">
             <button
@@ -70,7 +70,7 @@ export function Header() {
                   onMouseEnter={() => setOpenMega(item.children ? item.label : null)}
                   onMouseLeave={() => setOpenMega(null)}
                 >
-                  <Link href={item.href} className="eyebrow link-underline py-2">
+                  <Link href={item.href} className="eyebrow nav-label link-underline py-2">
                     {item.label}
                   </Link>
 
@@ -95,9 +95,9 @@ export function Header() {
             </nav>
           </div>
 
-          {/* Center: wordmark */}
-          <Link href="/" className="shrink-0 text-center" aria-label={`${site.name} home`}>
-            <span className="font-[family-name:var(--font-display)] text-2xl uppercase tracking-[0.35em]">
+          {/* Center: wordmark — understated bordered fashion-house mark */}
+          <Link href="/" className="shrink-0" aria-label={`${site.name} home`}>
+            <span className="inline-block font-[family-name:var(--font-display)] text-xl uppercase tracking-[0.3em] [text-indent:0.3em] sm:border sm:border-current/25 sm:px-4 sm:py-1.5">
               {site.name}
             </span>
           </Link>

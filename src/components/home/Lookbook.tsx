@@ -6,16 +6,17 @@ import { Reveal } from "@/components/ui/Reveal";
 /** Asymmetrical editorial image grid. */
 export function Lookbook() {
   return (
-    <section className="container-lux py-24 md:py-32">
-      <Reveal className="mb-14 flex items-end justify-between">
+    <section className="container-lux py-28 md:py-40">
+      <Reveal className="mb-16 flex items-end justify-between">
         <div>
-          <p className="eyebrow mb-3">The Lookbook</p>
+          <p className="eyebrow mb-4">The Lookbook</p>
           <h2
             className="font-[family-name:var(--font-display)]"
             style={{ fontSize: "var(--text-h2)" }}
           >
             Autumn in Frame
           </h2>
+          <p className="eyebrow mt-4 !tracking-[0.4em]">Autumn / Winter 2026</p>
         </div>
         <Link href="/collections" className="link-underline eyebrow hidden sm:block">
           View all
@@ -63,7 +64,7 @@ function LookImage({ index }: { index: number }) {
       alt={img.alt}
       fill
       sizes="(min-width:768px) 40vw, 100vw"
-      className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05]"
+      className="img-grade object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
     />
   );
 }

@@ -27,6 +27,7 @@ export default function StoryPage() {
       />
       <EditorialSection
         reverse
+        tone="dark"
         eyebrow="Chapter II"
         title="A commitment to the hand"
         body="We partner with artisans and mills whose standards match our own, producing in small runs so that each piece receives the attention it deserves."

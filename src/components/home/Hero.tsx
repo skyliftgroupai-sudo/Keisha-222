@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { heroImage } from "@/lib/mock/products";
 
-/** Full-screen editorial hero with a slow image zoom and staggered text rise. */
+/** Full-screen editorial hero — cinematic grade, slow zoom, staggered text. */
 export function Hero() {
   return (
-    <section className="relative h-[92vh] min-h-[560px] w-full overflow-hidden">
+    <section className="relative h-[94vh] min-h-[580px] w-full overflow-hidden">
       <div className="absolute inset-0 animate-zoom">
         <Image
           src={heroImage.url}
@@ -13,38 +13,35 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="img-grade object-cover"
         />
       </div>
-      {/* Gradient for legibility, kept subtle */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-black/20" />
+      {/* Cinematic neutral overlay — rich at the base for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-black/25" />
 
-      <div className="container-lux relative flex h-full flex-col items-start justify-end pb-24 text-[var(--color-paper)]">
+      <div className="container-lux relative flex h-full flex-col items-start justify-end pb-28 text-[var(--color-white)]">
         <p
-          className="animate-rise eyebrow !text-[var(--color-paper)]/80"
-          style={{ animationDelay: "150ms" }}
+          className="animate-rise eyebrow !text-[var(--color-white)]/80"
+          style={{ animationDelay: "200ms" }}
         >
-          Autumn / Winter
+          Autumn / Winter 2026
         </p>
         <h1
-          className="animate-rise mt-4 max-w-4xl font-[family-name:var(--font-display)] text-[color:var(--color-paper)]"
-          style={{ animationDelay: "300ms", fontSize: "var(--text-hero)" }}
+          className="animate-rise mt-5 max-w-4xl font-[family-name:var(--font-display)]"
+          style={{ animationDelay: "380ms", fontSize: "var(--text-hero)" }}
         >
           The Art of Modern Luxury
         </h1>
         <p
-          className="animate-rise mt-5 max-w-md text-base text-[var(--color-paper)]/85"
-          style={{ animationDelay: "480ms" }}
+          className="animate-rise mt-6 max-w-md text-base text-[var(--color-white)]/85"
+          style={{ animationDelay: "560ms" }}
         >
           A new expression of timeless craftsmanship.
         </p>
-        <div
-          className="animate-rise mt-9"
-          style={{ animationDelay: "640ms" }}
-        >
+        <div className="animate-rise mt-10" style={{ animationDelay: "720ms" }}>
           <Link
             href="/shop"
-            className="btn border-[var(--color-paper)] bg-[var(--color-paper)] text-[var(--color-ink)] hover:bg-transparent hover:text-[var(--color-paper)]"
+            className="btn border-[var(--color-white)] bg-[var(--color-white)] text-[var(--color-ink)] hover:bg-transparent hover:text-[var(--color-white)]"
           >
             Explore the Collection
           </Link>

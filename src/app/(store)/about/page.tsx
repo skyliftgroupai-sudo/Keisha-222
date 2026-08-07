@@ -65,6 +65,7 @@ export default function AboutPage() {
       {/* CRAFTSMANSHIP */}
       <EditorialSection
         reverse
+        tone="dark"
         eyebrow="Craftsmanship"
         title="Made by hand, made to last"
         body="Our garments are produced in small ateliers by artisans who have refined their craft over generations. We work only with mills and makers who share our commitment to quality and responsibility."

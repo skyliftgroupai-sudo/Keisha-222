@@ -39,7 +39,7 @@ export function ProductCard({
             alt={secondary!.alt}
             fill
             sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"
-            className="object-cover opacity-0 transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] group-hover:opacity-100"
+            className="object-cover opacity-0 transition-[opacity,transform] duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-hover:opacity-100"
           />
 
           {product.isNew && (

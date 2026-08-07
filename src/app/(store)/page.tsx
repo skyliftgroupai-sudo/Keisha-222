@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Featured collection — full-bleed */}
+      {/* Featured collection — full-bleed cinematic */}
       <EditorialSection
         variant="full"
         eyebrow="Featured"
@@ -30,37 +30,40 @@ export default function HomePage() {
         imageAlt={featuredCollection.alt}
       />
 
-      {/* New arrivals */}
-      <section className="container-lux py-24 md:py-32">
-        <SectionHeading
-          eyebrow="Just In"
-          title="New Arrivals"
-          description="The latest pieces to enter the house — tailored, knitted and crafted with intention."
-          linkLabel="View all"
-          linkHref="/new-arrivals"
-        />
-        <ProductGrid products={newArrivals} />
+      {/* New arrivals — crisp white band */}
+      <section className="bg-[var(--color-white)]">
+        <div className="container-lux py-28 md:py-40">
+          <SectionHeading
+            eyebrow="Just In"
+            title="New Arrivals"
+            description="The latest pieces to enter the house — tailored, knitted and crafted with intention."
+            linkLabel="View all"
+            linkHref="/new-arrivals"
+          />
+          <ProductGrid products={newArrivals} />
+        </div>
       </section>
 
-      {/* Editorial story */}
+      {/* Editorial story — the one powerful dark section */}
       <EditorialSection
+        tone="dark"
         eyebrow="Our Story"
         title="Crafted with Intention"
         body="Every piece is designed around timeless silhouettes, refined materials and modern craftsmanship — made to be worn, and kept, for years."
-        ctaLabel="Our Story"
+        ctaLabel="Discover Our Story"
         ctaHref="/about"
         image={editorialImage.url}
         imageAlt={editorialImage.alt}
         reverse
       />
 
-      {/* Lookbook */}
+      {/* Lookbook — editorial magazine layout (ivory) */}
       <Lookbook />
 
-      {/* Newsletter */}
+      {/* Newsletter — deeper ivory */}
       <section className="border-y border-[var(--color-line)] bg-[var(--color-paper-deep)]">
-        <Reveal className="container-lux flex flex-col items-center py-24 text-center md:py-32">
-          <p className="eyebrow mb-4">Newsletter</p>
+        <Reveal className="container-lux flex flex-col items-center py-28 text-center md:py-40">
+          <p className="eyebrow mb-5">Newsletter</p>
           <h2
             className="max-w-2xl font-[family-name:var(--font-display)]"
             style={{ fontSize: "var(--text-h1)" }}
@@ -71,7 +74,7 @@ export default function HomePage() {
             Be the first to discover new collections, private releases, and
             stories from the house.
           </p>
-          <div className="mt-8 w-full max-w-sm">
+          <div className="mt-9 w-full max-w-sm">
             <NewsletterForm />
           </div>
         </Reveal>

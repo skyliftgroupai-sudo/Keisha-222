@@ -4,13 +4,13 @@ import { NewsletterForm } from "@/components/marketing/NewsletterForm";
 
 export function Footer() {
   return (
-    <footer className="mt-32 border-t border-[var(--color-line)] bg-[var(--color-paper-deep)]">
-      <div className="container-lux py-20">
+    <footer className="theme-black">
+      <div className="container-lux py-24">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Newsletter */}
           <div className="max-w-sm">
             <p className="eyebrow mb-4">Correspondence</p>
-            <h3 className="mb-5 font-[family-name:var(--font-display)] text-2xl">
+            <h3 className="mb-5 font-[family-name:var(--font-display)] text-2xl text-[var(--color-ink)]">
               Join the house
             </h3>
             <p className="mb-6 text-sm text-[var(--color-ink-soft)]">
@@ -28,7 +28,7 @@ export function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="link-underline text-sm text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]"
+                      className="link-underline text-sm text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]"
                     >
                       {l.label}
                     </Link>
@@ -40,11 +40,13 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-[var(--color-line)] pt-8 text-xs text-[var(--color-ink-soft)] sm:flex-row sm:items-center">
-          <span className="tracking-[0.28em] uppercase">{site.name}</span>
+          <span className="font-[family-name:var(--font-display)] text-base tracking-[0.32em] text-[var(--color-ink)]">
+            {site.name}
+          </span>
           <span>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </span>
-          <span>Designed &amp; made with care.</span>
+          <span className="tracking-[0.2em] uppercase">Instagram · Pinterest</span>
         </div>
       </div>
     </footer>
