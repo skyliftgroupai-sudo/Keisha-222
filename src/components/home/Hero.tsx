@@ -1,19 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 import { heroImage } from "@/lib/mock/products";
+import { HeroVideo } from "@/components/home/HeroVideo";
 
-/** Full-screen editorial hero — cinematic grade, slow zoom, staggered text. */
+/** Full-screen editorial hero — campaign video background, staggered text. */
 export function Hero() {
   return (
     <section className="relative h-[94vh] min-h-[580px] w-full overflow-hidden">
-      <div className="absolute inset-0 animate-zoom">
-        <Image
-          src={heroImage.url}
-          alt={heroImage.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="img-grade object-cover"
+      <div className="absolute inset-0">
+        <HeroVideo
+          src="/video/hero.mp4"
+          poster={heroImage.url}
+          fallbackImage={heroImage.url}
+          fallbackAlt={heroImage.alt}
+          priorityImage
+          className="h-full w-full"
         />
       </div>
       {/* Cinematic neutral overlay — rich at the base for legibility */}
