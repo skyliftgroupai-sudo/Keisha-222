@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   MAISON — Design System (placeholder brand, easily re-themed)
+
+   Aesthetic: restrained luxury. Ink-on-paper palette, generous
+   whitespace, a Didone display serif paired with a quiet grotesque
+   sans, and slow, subtle motion. Change the tokens below to re-brand
+   the entire platform.
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Palette — a warm, gallery-white paper with near-black ink.
+     Deliberately almost monochrome; "color" comes from photography. */
+  --color-paper: #f6f4f0; /* page background */
+  --color-paper-deep: #efece6; /* alternating sections */
+  --color-ink: #1a1817; /* primary text */
+  --color-ink-soft: #55504b; /* secondary text */
+  --color-line: #ddd8d0; /* hairline borders */
+  --color-accent: #6b5c45; /* muted bronze, used sparingly */
+  --color-sale: #8a3b2e; /* restrained terracotta for sale prices */
+  --color-surface: #ffffff;
+
+  /* Type families — wired to next/font CSS variables in layout.tsx */
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale (fluid) */
+  --text-hero: clamp(2.75rem, 7vw, 6rem);
+  --text-h1: clamp(2rem, 4.5vw, 3.5rem);
+  --text-h2: clamp(1.6rem, 3vw, 2.4rem);
+  --text-h3: 1.35rem;
+  --text-body: 1rem;
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+
+  /* Tracking — wide, uppercase eyebrows are a luxury signature */
+  --tracking-wide: 0.18em;
+  --tracking-wider: 0.28em;
+
+  /* Motion — slow and eased */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-slow: 700ms;
+  --dur-med: 450ms;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+
+  /* Accessible focus ring — visible, on-brand */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* Respect users who prefer less motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Eyebrow / kicker label */
+  .eyebrow {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+
+  /* Primary button — a quiet, confident slab */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 2.25rem;
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    border: 1px solid var(--color-ink);
+    transition:
+      background-color var(--dur-med) var(--ease-lux),
+      color var(--dur-med) var(--ease-lux);
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--color-ink);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-ink);
+  }
+  .btn-ghost:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* Animated underline link */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--dur-med) var(--ease-lux);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Content width */
+  .container-lux {
+    width: 100%;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 4rem);
+  }
+}
+
+@layer utilities {
+  /* Hero entrance — staggered rise/fade on load */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slow-zoom {
+    from {
+      transform: scale(1.08);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .animate-rise {
+    opacity: 0;
+    animation: rise-in var(--dur-slow) var(--ease-lux) forwards;
+  }
+  .animate-zoom {
+    animation: slow-zoom 2400ms var(--ease-lux) forwards;
+  }
+
+  /* Slow reveal on scroll (paired with IntersectionObserver in JS) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity var(--dur-slow) var(--ease-lux),
+      transform var(--dur-slow) var(--ease-lux);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
