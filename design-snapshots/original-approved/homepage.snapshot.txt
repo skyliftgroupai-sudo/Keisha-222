@@ -1,0 +1,45 @@
+MAISON — APPROVED BASELINE — Homepage textual snapshot
+Route: /
+Captured from the running approved build.
+
+── Rendered content (top → bottom) ─────────────────────────────
+AUTUMN / WINTER
+The Art of Modern Luxury
+A new expression of timeless craftsmanship.
+[ EXPLORE THE COLLECTION ]
+
+FEATURED
+The Autumn Collection
+Considered layers and enduring materials for the turning season.
+[ DISCOVER ]
+
+JUST IN
+New Arrivals
+The latest pieces to enter the house — tailored, knitted and crafted with intention.
+[ VIEW ALL ]
+  NEW · OUTERWEAR · Signature Wool Coat · $895 · 3 colors
+  NEW · READY-TO-WEAR · Tailored Silk Dress · $695 · 2 colors
+  NEW · KNITWEAR · Cashmere Oversized Knit · $595 · 3 colors
+  NEW · FOOTWEAR · Suede Ankle Boot · $780 · 2 colors
+
+OUR STORY
+Crafted with Intention
+Every piece is designed around timeless silhouettes, refined materials and
+modern craftsmanship — made to be worn, and kept, for years.
+[ OUR STORY ]
+
+THE LOOKBOOK
+Autumn in Frame
+[ VIEW ALL ]
+  (asymmetrical 5-image editorial grid)
+
+NEWSLETTER
+Join the World of Maison
+Be the first to discover new collections, private releases, and stories from the house.
+[ Email address ] [ SIGN UP ]
+
+── Structure ───────────────────────────────────────────────────
+Header (transparent scrim over hero) → Hero (full-bleed, slow zoom, staggered
+text rise) → Featured collection (full-bleed) → New Arrivals (4-up grid,
+hover image swap) → Editorial story (image + text, reversed) → Lookbook
+(asymmetrical grid) → Newsletter → Footer.

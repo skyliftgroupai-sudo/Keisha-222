@@ -1,0 +1,33 @@
+MAISON — APPROVED BASELINE — Admin dashboard textual snapshot
+Route: /admin
+Captured from the running approved build.
+
+── Chrome ──────────────────────────────────────────────────────
+Dark sidebar (MAISON · ADMIN CONSOLE) with nav:
+Dashboard · Products · Orders · Customers · Inventory · Collections ·
+Discounts · Content · Analytics · ← Back to store · (AO) Store Admin
+Amber banner: "Prototype — admin console concept with sample data.
+Demonstrates the custom platform; not connected to a live database."
+
+── Dashboard content ───────────────────────────────────────────
+Wednesday, 7 August 2026 · Store overview
+
+KPI cards:
+  REVENUE (30D)  $248,910  +12.4%
+  ORDERS (30D)   412       +8.1%
+  PRODUCTS       12        3 low stock
+  CUSTOMERS      3,284     +5.6%
+
+Revenue (inline SVG area chart, last 30 days)
+Low stock: Signature Wool Coat 2 · Tailored Silk Dress 1 ·
+           Italian Leather Jacket 3 · Cashmere Oversized Knit 0
+
+Recent orders table:
+  MSN-2026-0431  Amara Okafor     Aug 7  Paid        $1,485.00
+  MSN-2026-0430  Julien Marchand  Aug 7  Processing  $695.00
+  MSN-2026-0429  Sofia Ricci      Aug 6  Shipped     $2,340.00
+  MSN-2026-0428  Daniel Cho       Aug 6  Delivered   $1,050.00
+  … (+ more)
+
+Other admin screens: /admin/products, /orders, /customers, /inventory,
+/collections, /discounts, /content, /analytics.
