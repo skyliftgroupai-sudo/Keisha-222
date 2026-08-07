@@ -29,3 +29,9 @@ next-env.d.ts
 *.pem
 npm-debug.log*
 .vercel
+
+# build artifacts
+tsconfig.tsbuildinfo
+
+# local backup bundles (kept outside the repo, on the Desktop)
+*.bundle
