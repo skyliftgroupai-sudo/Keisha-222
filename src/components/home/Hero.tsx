@@ -8,7 +8,10 @@ export function Hero() {
     <section className="relative h-[94vh] min-h-[580px] w-full overflow-hidden">
       <div className="absolute inset-0">
         <HeroVideo
-          src="/video/hero.mp4"
+          sources={[
+            { src: "/video/hero-desktop.mp4", media: "(min-width: 768px)" },
+            { src: "/video/hero-mobile.mp4", media: "(max-width: 767px)" },
+          ]}
           poster={heroImage.url}
           fallbackImage={heroImage.url}
           fallbackAlt={heroImage.alt}

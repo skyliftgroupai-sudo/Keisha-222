@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroVideo } from "@/components/home/HeroVideo";
 import { cn } from "@/lib/utils";
 
 /**
@@ -9,6 +10,9 @@ import { cn } from "@/lib/utils";
  *  - variant="split" → image + text side by side (`reverse` flips sides)
  *  - tone="dark"     → charcoal editorial band (split only); wraps in
  *                      `.theme-dark` so all children invert automatically.
+ *  - `video` (split only, optional) → plays a looping video in place of the
+ *    static image; `image`/`imageAlt` are still required and are used as
+ *    the poster frame and the fallback if the video fails to load.
  */
 export function EditorialSection({
   eyebrow,
@@ -18,6 +22,7 @@ export function EditorialSection({
   ctaHref,
   image,
   imageAlt,
+  video,
   reverse = false,
   variant = "split",
   tone = "light",
@@ -29,6 +34,7 @@ export function EditorialSection({
   ctaHref: string;
   image: string;
   imageAlt: string;
+  video?: string;
   reverse?: boolean;
   variant?: "split" | "full";
   tone?: "light" | "dark";
@@ -80,13 +86,23 @@ export function EditorialSection({
           )}
         >
           <Reveal className="relative aspect-[4/5] overflow-hidden bg-[var(--color-paper-deep)]">
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              sizes="(min-width:768px) 50vw, 100vw"
-              className="img-grade object-cover"
-            />
+            {video ? (
+              <HeroVideo
+                src={video}
+                poster={image}
+                fallbackImage={image}
+                fallbackAlt={imageAlt}
+                className="img-grade h-full w-full"
+              />
+            ) : (
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                sizes="(min-width:768px) 50vw, 100vw"
+                className="img-grade object-cover"
+              />
+            )}
           </Reveal>
 
           <Reveal delay={140} className="max-w-md md:px-4">

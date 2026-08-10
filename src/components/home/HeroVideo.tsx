@@ -8,19 +8,24 @@ import { cn } from "@/lib/utils";
  * Hero background video: autoplay, muted, looping, no controls.
  *
  * - `className` sizes/positions the element; the caller controls layout.
+ * - Provide either a single `src`, or `sources` (an ordered list of
+ *   `{ src, media }`) to let the browser pick per-breakpoint via native
+ *   `<source media="...">` — used for the desktop/mobile hero videos.
  * - Falls back to `fallbackImage` if the video fails to load for any reason.
  * - Honors `prefers-reduced-motion`: pauses immediately after the first
  *   frame renders, rather than looping continuously.
  */
 export function HeroVideo({
   src,
+  sources,
   poster,
   fallbackImage,
   fallbackAlt,
   className,
   priorityImage = false,
 }: {
-  src: string;
+  src?: string;
+  sources?: { src: string; media: string }[];
   poster: string;
   fallbackImage: string;
   fallbackAlt: string;
@@ -60,7 +65,7 @@ export function HeroVideo({
     <video
       ref={videoRef}
       className={cn("object-cover", className)}
-      src={src}
+      src={sources ? undefined : src}
       poster={poster}
       autoPlay
       muted
@@ -69,6 +74,10 @@ export function HeroVideo({
       preload="auto"
       aria-hidden="true"
       onError={() => setFailed(true)}
-    />
+    >
+      {sources?.map((s) => (
+        <source key={s.src} src={s.src} media={s.media} />
+      ))}
+    </video>
   );
 }

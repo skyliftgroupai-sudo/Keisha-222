@@ -52,6 +52,7 @@ export default function HomePage() {
         body="Every piece is designed around timeless silhouettes, refined materials and modern craftsmanship — made to be worn, and kept, for years."
         ctaLabel="Discover Our Story"
         ctaHref="/about"
+        video="/video/hero.mp4"
         image={editorialImage.url}
         imageAlt={editorialImage.alt}
         reverse
