@@ -20,7 +20,7 @@ export function MobileMenu() {
         <nav
           aria-label="Mobile"
           className={cn(
-            "absolute left-0 top-0 flex h-full w-[86%] max-w-sm flex-col bg-[var(--color-paper)] p-8 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "theme-dark absolute left-0 top-0 flex h-full w-[86%] max-w-sm flex-col bg-[var(--color-paper)] p-8 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
             visible ? "translate-x-0" : "-translate-x-full",
           )}
         >

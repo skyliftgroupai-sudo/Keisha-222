@@ -46,7 +46,7 @@ export function Header() {
         "sticky top-0 z-40 transition-[background-color,color,border-color] duration-500",
         transparent
           ? "bg-gradient-to-b from-black/30 to-transparent text-[var(--color-paper)]"
-          : "border-b border-[var(--color-line)] bg-[var(--color-paper)]/95 text-[var(--color-ink)] backdrop-blur",
+          : "theme-dark border-b border-[var(--color-line)] bg-[var(--color-paper)]/95 text-[var(--color-ink)] backdrop-blur",
       )}
     >
       <div className="container-lux">
